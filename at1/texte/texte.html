@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>casio pizzas - 50 Variedades de Pizza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .pizza-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .category-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-pizza-slice text-2xl"></i>
+                <h1 class="text-2xl font-bold">casio pizzas</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#inicio" class="hover:text-yellow-200 transition">Início</a>
+                <a href="#cardapio" class="hover:text-yellow-200 transition">Cardápio</a>
+                <a href="#sobre" class="hover:text-yellow-200 transition">Sobre</a>
+                <a href="#contato" class="hover:text-yellow-200 transition">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="bg-yellow-400 text-blue-800 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition">
+                    <i class="fas fa-phone mr-2"></i>Peça agora
+                </button>
+                <button class="md:hidden text-2xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-blue-700 py-4 px-4" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#inicio" class="hover:text-yellow-200 transition">Início</a>
+                <a href="#cardapio" class="hover:text-yellow-200 transition">Cardápio</a>
+                <a href="#sobre" class="hover:text-yellow-200 transition">Sobre</a>
+                <a href="#contato" class="hover:text-yellow-200 transition">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section text-white py-20 md:py-32 flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">casio pizzas</h1>
+            <p class="text-xl md:text-2xl mb-8">50 variedades de pizza para todos os gostos!</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="bg-yellow-400 text-blue-800 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition text-lg">
+                    <i class="fas fa-pizza-slice mr-2"></i>Ver Cardápio
+                </button>
+                <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition text-lg">
+                    <i class="fas fa-phone mr-2"></i>(11) 1234-5678
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Entrega Rápida</h3>
+                    <p class="text-gray-600">Entregamos em até 45 minutos ou sua pizza é grátis!</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ingredientes Frescos</h3>
+                    <p class="text-gray-600">Usamos apenas ingredientes selecionados e frescos.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-pizza-slice"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">50 Variedades</h3>
+                    <p class="text-gray-600">O maior cardápio de pizzas da região!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4">Nosso Cardápio</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Escolha entre nossas 50 variedades de pizza artesanais</p>
+            </div>
+            
+            <!-- Category Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-500 hover:text-white transition active" data-category="all">Todas</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-500 hover:text-white transition" data-category="tradicionais">Tradicionais</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-500 hover:text-white transition" data-category="especiais">Especiais</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-500 hover:text-white transition" data-category="vegetarianas">Vegetarianas</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-500 hover:text-white transition" data-category="doces">Doces</button>
+            </div>
+            
+            <!-- Pizza Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Pizza 1 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="tradicionais">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=781&q=80" alt="Pizza Margherita" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">Tradicional</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Margherita</h3>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, manjericão fresco e azeite.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold text-lg">R$ 49,90</span>
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 2 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="especiais">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Pizza Pepperoni" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">Especial</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Pepperoni Supreme</h3>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, pepperoni, pimentão e cebola.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold text-lg">R$ 59,90</span>
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 3 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="vegetarianas">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pizza Vegetariana" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">Vegetariana</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Vegetariana</h3>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, berinjela, abobrinha, pimentão e cebola.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold text-lg">R$ 54,90</span>
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 4 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="doces">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pizza Doce" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">Doce</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Romeu e Julieta</h3>
+                        <p class="text-gray-600 mb-4">Mussarela, goiabada cremosa e queijo minas frescal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold text-lg">R$ 52,90</span>
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 5 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="tradicionais">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1571066811602-716837d681de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80" alt="Pizza Calabresa" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">Tradicional</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Calabresa</h3>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, calabresa fatiada e cebola.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold text-lg">R$ 49,90</span>
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 6 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="especiais">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Pizza Frutos do Mar" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">Especial</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Frutos do Mar</h3>
+                        <p class="text-gray-600 mb-4">Molho de tomate, mussarela, camarão, lula e mexilhão.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold text-lg">R$ 69,90</span>
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 7 -->
+                <div class="pizza-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="vegetarianas">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d
+</html>
